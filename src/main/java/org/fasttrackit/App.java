@@ -38,5 +38,6 @@ public class App
         Car car2 = new Car();
         car2.name = "sfa";
 
+        // some new content
     }
 }
