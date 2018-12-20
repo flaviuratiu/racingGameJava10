@@ -1,8 +1,10 @@
 package org.fasttrackit;
 
+import java.time.LocalDateTime;
+
 /**
  * Hello world!
- *fdsafdas
+ * fdsafdas
  * fdsa
  * fdsa
  * fdsa
@@ -10,10 +12,8 @@ package org.fasttrackit;
  */
 
 // this is a comment
-public class App 
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main(String[] args) {
         Car car = new Car();
         car.name = "Dacia";
         car.color = "white";
@@ -21,9 +21,21 @@ public class App
         car.mileage = 7.5;
         car.running = true;
 
+        double carTraveledDistance
+                = car.accelerate(100, 2);
+
+        
+
+
+        System.out.println("Hello");
+        System.out.println(car.toString());
+
         Engine engine = new Engine();
         engine.manufacturer = "Renault";
         engine.capacity = 1500;
+        engine.expiryDate =
+                LocalDateTime.now().plusYears(10);
+
 
         car.engine = engine;
 
@@ -31,8 +43,6 @@ public class App
         engine.manufacturer = "Microsoft";
 
         engine = null;
-
-
 
 
         Car car2 = new Car();
