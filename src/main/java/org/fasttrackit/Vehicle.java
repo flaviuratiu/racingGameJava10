@@ -12,7 +12,7 @@ public class Vehicle {
         vehicleCount++;
     }
 
-    protected double accelerate(double speed, double durationInHours) {
+    public double accelerate(double speed, double durationInHours) {
         System.out.println(name + " accelerated with " + speed +
                 " km/h for " + durationInHours + " hours.");
 
@@ -21,6 +21,11 @@ public class Vehicle {
         System.out.println("Traveled distance: " + traveledDistance + " km.");
 
         return traveledDistance;
+    }
+
+    // example of method overloading
+    public double accelerate(double speed) {
+        return accelerate(speed, 1);
     }
 
     public String getName() {

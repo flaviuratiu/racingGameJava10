@@ -63,5 +63,14 @@ public class App {
         System.out.println("Value from vehicle 2: " + vehicle2.vehicleCount);
         System.out.println("Value from Vehicle class: " + Vehicle.vehicleCount);
 
+        System.out.println();
+
+        new AutoVehicle();
+
+        new AutoVehicle(new Engine());
+
+        // example of invoking overloaded methods
+        vehicle1.accelerate(34.12);
+        vehicle2.accelerate(130, 0.8);
     }
 }
