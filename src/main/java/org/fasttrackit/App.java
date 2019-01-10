@@ -30,7 +30,8 @@ public class App {
         car.setMileage(7.5);
         car.running = true;
 
-        System.out.println(car.toString());
+        System.out.println(car);
+
 //
 //        System.out.println(car.getName());
 //
@@ -83,6 +84,14 @@ public class App {
         new UFO().accelerate(130, 0.8);
 
 
+        // polymorphism (an object can take multiple forms)
+        Vehicle ufo = new UFO();
+        // The type of the variable does NOT determine the object's behaviour
+        ufo.accelerate(200, 2);
+
+        // The type of the variable determines what methods can be invoked
+        // We might need type casting (see below)
+        ((UFO) ufo).concealCheating();
 
     }
 }
