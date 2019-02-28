@@ -1,5 +1,6 @@
 package org.fasttrackit.web;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.fasttrackit.service.TopWinnerService;
 import org.fasttrackit.transfer.TopWinnerListResponse;
 
@@ -20,7 +21,14 @@ public class TopWinnerServlet extends HttpServlet {
         try {
             TopWinnerListResponse topWinners = topWinnerService.getTopWinners();
 
+            // serializing or marshalling
+            ObjectMapper objectMapper = new ObjectMapper();
+            String responseJson = objectMapper.writeValueAsString(topWinners);
 
+            // content type or mime type
+            resp.setContentType("application/json");
+            resp.getWriter().print(responseJson);
+            resp.getWriter().flush();
         } catch (Exception e) {
             resp.sendError(500, "There was an error processing your request. " +
                     e.getMessage());

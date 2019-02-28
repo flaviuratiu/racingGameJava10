@@ -25,7 +25,7 @@ public class TopWinnerRepository {
     public List<TopWinner> getTopWinners() throws SQLException, IOException, ClassNotFoundException {
         try (Connection connection = DatabaseConfiguration.getConnection()) {
             String query =
-                    "SELECT `name`, wonRaces FROM top_winners ORDER BY wonRaces DESC;";
+                    "SELECT id, `name`, wonRaces FROM top_winners ORDER BY wonRaces DESC;";
 
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query);

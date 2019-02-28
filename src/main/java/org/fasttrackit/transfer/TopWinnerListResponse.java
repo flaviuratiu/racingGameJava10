@@ -13,6 +13,10 @@ public class TopWinnerListResponse {
         this.content = content;
     }
 
+    public TopWinnerListResponse() {
+        // used for unmarshalling
+    }
+
     public List<TopWinner> getContent() {
         return content;
     }
